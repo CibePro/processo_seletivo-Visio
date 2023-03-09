@@ -1,0 +1,10 @@
+# Melhorias que devem ser feitas no código 
+
+1 - A primeira melhoria a ser sugerida é a inserção de comentários dentro do código, pois para quem nunca viu o projeto, fica difícil de entender o seu objetivo e o que se deve esperar quando ele é executado. Insenrido comentários, também é possível facilitar a manuntenção desse código, pois as vezes é outro programador que irá realizar a manuntenção, e se o código estiver comentado, facilita muito esse trabalho, ajuda bastante também no caso de o projeto ficar osioso por um tempo, e quando é retornado, o programador esquecer das coisas que fez, então os comentários auxiliariam no entedimento desse código. 
+Essa parte de comentar tudo que está acontecendo estão nas boas práticas de clean code, 
+
+2 - Na pasta de errors, para as boas práticas de clean code, eu separaria os erros por Erros do cliente (400-499) e Erros do servidor (500-599), assim criando dois arquivos com nomes sugestivos, para facilitar a leitura e a localização do erro caso esse ocorra.
+
+3- Na parte de rotas iria realizar duas melhorias, a primeira seria dividir a plataform.route.ts.
+No primeiro código, seria apenas para listar as rotas, pois o código está muito cheio, e isso dificulta a organização, dificultando o entendimento de quem está no projeto mas não criou o este arquivo. O outro arquivo seria responsável por as demais funções que não estão diretamente ligadas a listagem das rotas, devem ser reogarnidadas em outro arquivo, assim usando as boas práticas de clean code.
+Na parte das rotas, pode-se notar que existe dois métodos get para a rota estabelecimento/camera/dia. Seria interessante juntar essas rotas em uma só, pois assim não precisaria criar uma nova rota pra ver dois tipos de listagens diferentes, poderia ser feito todas essas listagens em apenas uma função e em uma rota. Também seria interessente criar uma rota chamada estabelecimento/camera/dia/:id, pois quando se fizesse um método put ou delete, poderia buscar aquele id específico que foi usado para essas operações, e listar se ocorreu a atualização do banco, ou se o banco realmente foi deletado, sem a necesidade listar todos os elementos do banco.
